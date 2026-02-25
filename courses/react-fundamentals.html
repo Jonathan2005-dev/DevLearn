@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../tailwind/tailwind-all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React for Beginners - DevLearn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg"></div>
+                    <span class="text-2xl font-bold">DevLearn</span>
+                </a>
+                <a href="../index.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Header -->
+    <section class="bg-gradient-to-r from-cyan-600 to-blue-600 py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-6 mb-6">
+                <div class="w-24 h-24 bg-white/20 rounded-lg flex items-center justify-center text-5xl">⚛️</div>
+                <div>
+                    <h1 class="text-4xl font-bold mb-2">React for Beginners</h1>
+                    <p class="text-white/80">Build interactive user interfaces with React</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="md:col-span-2">
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+                    <h2 class="text-3xl font-bold mb-4">Course Overview</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        React is the most popular JavaScript library for building user interfaces. In this course, you'll learn how to build modern, interactive web applications. Master components, hooks, state management, and routing. Build real applications from scratch and learn the skills demanded by top tech companies.
+                    </p>
+                </div>
+
+                <!-- Lessons -->
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-8">
+                    <h2 class="text-3xl font-bold mb-6">Course Lessons (20 Lessons)</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-cyan-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">1. React Basics</h3>
+                                    <p class="text-gray-400">What is React and why use it?</p>
+                                </div>
+                                <div class="text-gray-500">18 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-cyan-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">2. JSX & Rendering</h3>
+                                    <p class="text-gray-400">JSX syntax and ReactDOM rendering</p>
+                                </div>
+                                <div class="text-gray-500">22 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-cyan-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">3. Components & Props</h3>
+                                    <p class="text-gray-400">Functional components and props</p>
+                                </div>
+                                <div class="text-gray-500">24 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-cyan-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">4. State & useState Hook</h3>
+                                    <p class="text-gray-400">Managing component state</p>
+                                </div>
+                                <div class="text-gray-500">26 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-cyan-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">5. useEffect Hook</h3>
+                                    <p class="text-gray-400">Side effects and lifecycle</p>
+                                </div>
+                                <div class="text-gray-500">28 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-cyan-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">6. Event Handling</h3>
+                                    <p class="text-gray-400">Click events and form inputs</p>
+                                </div>
+                                <div class="text-gray-500">22 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-cyan-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">7. Conditional Rendering</h3>
+                                    <p class="text-gray-400">if/else and ternary in JSX</p>
+                                </div>
+                                <div class="text-gray-500">20 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-cyan-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">8. Lists & Keys</h3>
+                                    <p class="text-gray-400">Rendering lists and using keys</p>
+                                </div>
+                                <div class="text-gray-500">20 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-cyan-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">9. Forms in React</h3>
+                                    <p class="text-gray-400">Controlled components and validation</p>
+                                </div>
+                                <div class="text-gray-500">26 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-cyan-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">10. API Integration</h3>
+                                    <p class="text-gray-400">Fetching data from APIs</p>
+                                </div>
+                                <div class="text-gray-500">28 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-cyan-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">11. React Router</h3>
+                                    <p class="text-gray-400">Navigation and multi-page apps</p>
+                                </div>
+                                <div class="text-gray-500">30 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-cyan-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">12. Context API</h3>
+                                    <p class="text-gray-400">State management without Redux</p>
+                                </div>
+                                <div class="text-gray-500">28 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-cyan-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">13-20. Advanced & Projects</h3>
+                                    <p class="text-gray-400">Performance, testing, and capstone</p>
+                                </div>
+                                <div class="text-gray-500">160 min</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Course Details</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Level</span>
+                            <span class="font-semibold">Intermediate</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Lessons</span>
+                            <span class="font-semibold">20</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Duration</span>
+                            <span class="font-semibold">7 weeks</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Students</span>
+                            <span class="font-semibold">2,567+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Prerequisites</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>✓ JavaScript basics</li>
+                        <li>✓ ES6+ knowledge</li>
+                        <li>✓ HTML/CSS familiarity</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">What You'll Learn</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start"><span class="text-cyan-400 mr-2">✓</span> Components</li>
+                        <li class="flex items-start"><span class="text-cyan-400 mr-2">✓</span> Hooks</li>
+                        <li class="flex items-start"><span class="text-cyan-400 mr-2">✓</span> State</li>
+                        <li class="flex items-start"><span class="text-cyan-400 mr-2">✓</span> Routing</li>
+                        <li class="flex items-start"><span class="text-cyan-400 mr-2">✓</span> APIs</li>
+                        <li class="flex items-start"><span class="text-cyan-400 mr-2">✓</span> Performance</li>
+                    </ul>
+                </div>
+
+                <button class="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold hover:shadow-lg transition">
+                    Enroll Now
+                </button>
+
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Resources</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="text-cyan-400 hover:text-cyan-300 flex items-center">
+                            <span class="mr-2">📄</span> Documentation
+                        </a>
+                        <a href="#" class="text-cyan-400 hover:text-cyan-300 flex items-center">
+                            <span class="mr-2">💻</span> Starter Code
+                        </a>
+                        <a href="#" class="text-cyan-400 hover:text-cyan-300 flex items-center">
+                            <span class="mr-2">📥</span> Download Bundle
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-8 px-4 mt-12">
+        <div class="max-w-7xl mx-auto text-center text-gray-400">
+            <p>&copy; 2026 DevLearn. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

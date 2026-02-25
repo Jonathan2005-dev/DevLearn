@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../tailwind/tailwind-all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS & Styling - DevLearn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg"></div>
+                    <span class="text-2xl font-bold">DevLearn</span>
+                </a>
+                <a href="../index.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Header -->
+    <section class="bg-gradient-to-r from-blue-600 to-cyan-600 py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-6 mb-6">
+                <div class="w-24 h-24 bg-white/20 rounded-lg flex items-center justify-center text-5xl">🎨</div>
+                <div>
+                    <h1 class="text-4xl font-bold mb-2">CSS & Styling</h1>
+                    <p class="text-white/80">Master Bootstrap, Tailwind, and modern CSS techniques</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="md:col-span-2">
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+                    <h2 class="text-3xl font-bold mb-4">Course Overview</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Learn CSS3 and modern styling frameworks. Master Flexbox and CSS Grid for powerful layouts, then dive into Bootstrap and Tailwind CSS for rapid development. This course covers everything from basic styling to advanced responsive design patterns that you'll use in real-world projects.
+                    </p>
+                </div>
+
+                <!-- Lessons -->
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-8">
+                    <h2 class="text-3xl font-bold mb-6">Course Lessons</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">1. CSS Basics & Selectors</h3>
+                                    <p class="text-gray-400">Syntax, selectors, and CSS properties</p>
+                                </div>
+                                <div class="text-gray-500">20 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">2. The Box Model</h3>
+                                    <p class="text-gray-400">Margin, padding, border, and box-sizing</p>
+                                </div>
+                                <div class="text-gray-500">18 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">3. Positioning & Display</h3>
+                                    <p class="text-gray-400">Static, relative, absolute, fixed positioning</p>
+                                </div>
+                                <div class="text-gray-500">22 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">4. Flexbox Layout</h3>
+                                    <p class="text-gray-400">Flex containers, items, and alignment</p>
+                                </div>
+                                <div class="text-gray-500">25 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">5. CSS Grid</h3>
+                                    <p class="text-gray-400">Grid columns, rows, and advanced layouts</p>
+                                </div>
+                                <div class="text-gray-500">28 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">6. Responsive Design</h3>
+                                    <p class="text-gray-400">Media queries and mobile-first design</p>
+                                </div>
+                                <div class="text-gray-500">26 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">7. Animations & Transitions</h3>
+                                    <p class="text-gray-400">CSS animations, keyframes, and transforms</p>
+                                </div>
+                                <div class="text-gray-500">24 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">8. Bootstrap Framework</h3>
+                                    <p class="text-gray-400">Components, grid system, and utilities</p>
+                                </div>
+                                <div class="text-gray-500">30 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">9. Tailwind CSS Basics</h3>
+                                    <p class="text-gray-400">Utility-first CSS and customization</p>
+                                </div>
+                                <div class="text-gray-500">28 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">10. Advanced Tailwind</h3>
+                                    <p class="text-gray-400">Plugins, dark mode, and responsive designs</p>
+                                </div>
+                                <div class="text-gray-500">26 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">11. Typography & Colors</h3>
+                                    <p class="text-gray-400">Font styles, colors, and design systems</p>
+                                </div>
+                                <div class="text-gray-500">20 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">12. Portfolio Project</h3>
+                                    <p class="text-gray-400">Build a beautiful responsive website</p>
+                                </div>
+                                <div class="text-gray-500">90 min</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Course Details</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Level</span>
+                            <span class="font-semibold">Beginner</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Lessons</span>
+                            <span class="font-semibold">18</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Duration</span>
+                            <span class="font-semibold">6 weeks</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Students</span>
+                            <span class="font-semibold">2,456+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">What You'll Learn</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span> CSS3 Features</li>
+                        <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span> Flexbox & Grid</li>
+                        <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span> Bootstrap</li>
+                        <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span> Tailwind CSS</li>
+                        <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span> Responsive Design</li>
+                        <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span> Animations</li>
+                    </ul>
+                </div>
+
+                <button class="w-full py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-semibold hover:shadow-lg transition">
+                    Enroll Now
+                </button>
+
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Resources</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                            <span class="mr-2">📄</span> Course Notes
+                        </a>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                            <span class="mr-2">🔗</span> Code Examples
+                        </a>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                            <span class="mr-2">📥</span> Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-8 px-4 mt-12">
+        <div class="max-w-7xl mx-auto text-center text-gray-400">
+            <p>&copy; 2026 DevLearn. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

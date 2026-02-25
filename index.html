@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="tailwind/tailwind-all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevLearn - Master Web Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #0a2f51 75%, #1a1a2e 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .animated-text {
+            background: linear-gradient(90deg, #fff, #a0aec0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .category-pill {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-pill.active {
+            background-color: #fff;
+            color: #0f3460;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-2 cursor-pointer">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg"></div>
+                    <span class="text-2xl font-bold">DevLearn</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#courses" class="hover:text-blue-400 transition">Courses</a>
+                    <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+                    <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                    <a href="#resources" class="hover:text-blue-400 transition">Resources</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 hover:bg-gray-800 rounded-lg transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                    <button onclick="document.getElementById('login-modal').classList.remove('hidden')" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-semibold hover:shadow-lg transition">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="gradient-bg py-32 px-4 relative overflow-hidden">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <div class="flex flex-wrap justify-center gap-3 mb-12">
+                    <div class="category-pill active px-4 py-2 bg-white text-gray-900 rounded-full font-semibold">Discover</div>
+                    <a href="courses/html-fundamentals.html" class="category-pill px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700 hover:border-gray-500">HTML</a>
+                    <a href="courses/css-styling.html" class="category-pill px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700 hover:border-gray-500">CSS</a>
+                    <a href="courses/javascript-essentials.html" class="category-pill px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700 hover:border-gray-500">JavaScript</a>
+                    <a href="courses/react-fundamentals.html" class="category-pill px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700 hover:border-gray-500">React</a>
+                    <a href="courses/fullstack-advanced.html" class="category-pill px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700 hover:border-gray-500">Full-Stack</a>
+                </div>
+
+                <h1 class="animated-text text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Master Web Development
+                </h1>
+                
+                <p class="text-gray-300 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+                    Learn HTML, CSS, JavaScript, React, and Full-Stack development with comprehensive courses, real-world projects, and offline resources.
+                </p>
+
+                <div class="flex items-center bg-white rounded-full px-6 py-3 max-w-xl mx-auto shadow-xl hover:shadow-2xl transition">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <input 
+                        type="text" 
+                        placeholder="Search courses, resources..." 
+                        class="flex-1 bg-transparent ml-4 outline-none text-gray-800 placeholder-gray-400"
+                        id="searchInput"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="py-20 px-4 bg-gray-900">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Featured Courses</h2>
+                    <p class="text-gray-400 text-lg">Master the essentials of web development</p>
+                    <a href="courses/all-courses.html" class="inline-block mt-4 px-6 py-2 border border-blue-400 text-blue-400 rounded-lg hover:bg-blue-400/10 transition">
+                        View All Courses →
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- HTML Course -->
+                    <a href="courses/html-fundamentals.html" class="card-hover bg-gray-800/50 backdrop-blur border border-gray-700 rounded-xl p-6 hover:border-orange-500 block">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg mb-4 flex items-center justify-center text-2xl">📄</div>
+                        <h3 class="text-2xl font-bold mb-2">HTML Fundamentals</h3>
+                        <p class="text-gray-400 mb-4">Learn the building blocks of web pages with semantic HTML5</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-blue-400">12 Lessons</span>
+                            <button class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-lg hover:bg-blue-500/30 transition text-sm">
+                                Learn
+                            </button>
+                        </div>
+                    </a>
+
+                    <!-- CSS Course -->
+                    <a href="courses/css-styling.html" class="card-hover bg-gray-800/50 backdrop-blur border border-gray-700 rounded-xl p-6 hover:border-blue-500 block">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-lg mb-4 flex items-center justify-center text-2xl">🎨</div>
+                        <h3 class="text-2xl font-bold mb-2">CSS & Styling</h3>
+                        <p class="text-gray-400 mb-4">Master Bootstrap, Tailwind CSS, and modern styling techniques</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-blue-400">18 Lessons</span>
+                            <button class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-lg hover:bg-blue-500/30 transition text-sm">
+                                Learn
+                            </button>
+                        </div>
+                    </a>
+
+                    <!-- JavaScript Course -->
+                    <a href="courses/javascript-essentials.html" class="card-hover bg-gray-800/50 backdrop-blur border border-gray-700 rounded-xl p-6 hover:border-yellow-500 block">
+                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg mb-4 flex items-center justify-center text-2xl">⚡</div>
+                        <h3 class="text-2xl font-bold mb-2">JavaScript Essentials</h3>
+                        <p class="text-gray-400 mb-4">From basics to advanced concepts and modern ES6+ features</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-blue-400">25 Lessons</span>
+                            <button class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-lg hover:bg-blue-500/30 transition text-sm">
+                                Learn
+                            </button>
+                        </div>
+                    </a>
+
+                    <!-- React Course -->
+                    <a href="courses/react-fundamentals.html" class="card-hover bg-gray-800/50 backdrop-blur border border-gray-700 rounded-xl p-6 hover:border-cyan-500 block">
+                        <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg mb-4 flex items-center justify-center text-2xl">⚛️</div>
+                        <h3 class="text-2xl font-bold mb-2">React for Beginners</h3>
+                        <p class="text-gray-400 mb-4">Build interactive UIs with components, hooks, and state management</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-blue-400">20 Lessons</span>
+                            <button class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-lg hover:bg-blue-500/30 transition text-sm">
+                                Learn
+                            </button>
+                        </div>
+                    </a>
+
+                    <!-- Node.js Course -->
+                    <a href="courses/nodejs-backend.html" class="card-hover bg-gray-800/50 backdrop-blur border border-gray-700 rounded-xl p-6 hover:border-green-500 block">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-600 rounded-lg mb-4 flex items-center justify-center text-2xl">🟢</div>
+                        <h3 class="text-2xl font-bold mb-2">Node.js & Express</h3>
+                        <p class="text-gray-400 mb-4">Backend development with Node.js and Express framework</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-blue-400">22 Lessons</span>
+                            <button class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-lg hover:bg-blue-500/30 transition text-sm">
+                                Learn
+                            </button>
+                        </div>
+                    </a>
+
+                    <!-- Full-Stack Project -->
+                    <a href="courses/fullstack-advanced.html" class="card-hover bg-gray-800/50 backdrop-blur border border-gray-700 rounded-xl p-6 hover:border-purple-500 block">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-600 rounded-lg mb-4 flex items-center justify-center text-2xl">⚡</div>
+                        <h3 class="text-2xl font-bold mb-2">Full-Stack Development</h3>
+                        <p class="text-gray-400 mb-4">Build complete applications combining all technologies</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-blue-400">35 Lessons</span>
+                            <button class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-lg hover:bg-blue-500/30 transition text-sm">
+                                Learn
+                            </button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-4 bg-gray-800/50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Skills You'll Learn</h2>
+                    <p class="text-gray-400 text-lg">Comprehensive learning paths for every level</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition">
+                        <h3 class="font-bold text-lg mb-3 text-blue-400">Frontend</h3>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>✓ HTML5 Semantics</li>
+                            <li>✓ CSS Grid & Flexbox</li>
+                            <li>✓ Bootstrap Framework</li>
+                            <li>✓ Tailwind CSS</li>
+                            <li>✓ Responsive Design</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition">
+                        <h3 class="font-bold text-lg mb-3 text-yellow-400">JavaScript</h3>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>✓ DOM Manipulation</li>
+                            <li>✓ Async/Await</li>
+                            <li>✓ ES6+ Features</li>
+                            <li>✓ Fetch API</li>
+                            <li>✓ Error Handling</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition">
+                        <h3 class="font-bold text-lg mb-3 text-cyan-400">React</h3>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>✓ Components & JSX</li>
+                            <li>✓ Hooks (useState, useEffect)</li>
+                            <li>✓ State Management</li>
+                            <li>✓ Routing</li>
+                            <li>✓ Performance Optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition">
+                        <h3 class="font-bold text-lg mb-3 text-green-400">Backend</h3>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>✓ Node.js Basics</li>
+                            <li>✓ Express Framework</li>
+                            <li>✓ RESTful APIs</li>
+                            <li>✓ MongoDB & Databases</li>
+                            <li>✓ Authentication</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-4 bg-gray-900">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Build Real Projects</h2>
+                    <p class="text-gray-400 text-lg">Hands-on projects to strengthen your portfolio</p>
+                    <a href="projects/all-projects.html" class="inline-block mt-4 px-6 py-2 border border-blue-400 text-blue-400 rounded-lg hover:bg-blue-400/10 transition">
+                        View All Projects →
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Portfolio Website -->
+                    <a href="projects/portfolio-website.html" class="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-400 transition block">
+                        <div class="h-48 bg-gradient-to-r from-blue-600/80 to-cyan-600/80 flex items-center justify-center">
+                            <svg class="w-24 h-24 text-white opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Portfolio Website</h3>
+                            <p class="text-white/80 mb-4">Create a stunning personal portfolio using HTML, CSS, and JavaScript</p>
+                            <div class="flex gap-2 flex-wrap mb-4">
+                                <span class="px-3 py-1 bg-white/20 text-white text-xs rounded-full">HTML</span>
+                                <span class="px-3 py-1 bg-white/20 text-white text-xs rounded-full">CSS</span>
+                                <span class="px-3 py-1 bg-white/20 text-white text-xs rounded-full">JavaScript</span>
+                            </div>
+                            <button class="w-full py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition">Start Project</button>
+                        </div>
+                    </a>
+
+                    <!-- React Todo App -->
+                    <a href="projects/todo-app.html" class="bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl overflow-hidden border border-gray-700 hover:border-purple-400 transition block">
+                        <div class="h-48 bg-gradient-to-r from-purple-600/80 to-pink-600/80 flex items-center justify-center">
+                            <svg class="w-24 h-24 text-white opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">React Todo App</h3>
+                            <p class="text-white/80 mb-4">Build an interactive todo application with React hooks and local storage</p>
+                            <div class="flex gap-2 flex-wrap mb-4">
+                                <span class="px-3 py-1 bg-white/20 text-white text-xs rounded-full">React</span>
+                                <span class="px-3 py-1 bg-white/20 text-white text-xs rounded-full">JavaScript</span>
+                                <span class="px-3 py-1 bg-white/20 text-white text-xs rounded-full">Tailwind</span>
+                            </div>
+                            <button class="w-full py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition">Start Project</button>
+                        </div>
+                    </a>
+
+                    <!-- Weather App -->
+                    <a href="projects/weather-app.html" class="bg-gradient-to-br from-green-600 to-emerald-600 rounded-xl overflow-hidden border border-gray-700 hover:border-green-400 transition block">
+                        <div class="h-48 bg-gradient-to-r from-green-600/80 to-emerald-600/80 flex items-center justify-center">
+                            <svg class="w-24 h-24 text-white opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Weather App</h3>
+                            <p class="text-white/80 mb-4">Fetch real weather data using APIs and display it beautifully</p>
+                            <div class="flex gap-2 flex-wrap mb-4">
+                                <span class="px-3 py-1 bg-white/20 text-white text-xs rounded-full">API</span>
+                                <span class="px-3 py-1 bg-white/20 text-white text-xs rounded-full">JavaScript</span>
+                                <span class="px-3 py-1 bg-white/20 text-white text-xs rounded-full">Async</span>
+                            </div>
+                            <button class="w-full py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition">Start Project</button>
+                        </div>
+                    </a>
+
+                    <!-- E-commerce Store -->
+                    <a href="projects/ecommerce-store.html" class="bg-gradient-to-br from-orange-600 to-red-600 rounded-xl overflow-hidden border border-gray-700 hover:border-orange-400 transition block">
+                        <div class="h-48 bg-gradient-to-r from-orange-600/80 to-red-600/80 flex items-center justify-center">
+                            <svg class="w-24 h-24 text-white opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">E-commerce Store</h3>
+                            <p class="text-white/80 mb-4">Full-stack e-commerce with React, Node.js, and MongoDB</p>
+                            <div class="flex gap-2 flex-wrap mb-4">
+                                <span class="px-3 py-1 bg-white/20 text-white text-xs rounded-full">Full-Stack</span>
+                                <span class="px-3 py-1 bg-white/20 text-white text-xs rounded-full">MongoDB</span>
+                                <span class="px-3 py-1 bg-white/20 text-white text-xs rounded-full">Express</span>
+                            </div>
+                            <button class="w-full py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition">Start Project</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="py-20 px-4 bg-gray-800/50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Learning Resources</h2>
+                    <p class="text-gray-400 text-lg">Download offline materials and references</p>
+                    <a href="resources/all-resources.html" class="inline-block mt-4 px-6 py-2 border border-blue-400 text-blue-400 rounded-lg hover:bg-blue-400/10 transition">
+                        View All Resources →
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-900 rounded-lg p-8 border border-gray-700 hover:border-blue-500 transition text-center">
+                        <div class="w-16 h-16 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-8-6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">HTML Cheatsheet</h3>
+                        <p class="text-gray-400 mb-4">Complete HTML5 reference guide</p>
+                        <button class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-lg hover:bg-blue-500/30 transition w-full">Download</button>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-lg p-8 border border-gray-700 hover:border-blue-500 transition text-center">
+                        <div class="w-16 h-16 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-8-6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">CSS & Tailwind Docs</h3>
+                        <p class="text-gray-400 mb-4">Bootstrap and Tailwind CSS complete reference</p>
+                        <button class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-lg hover:bg-blue-500/30 transition w-full">Download</button>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-lg p-8 border border-gray-700 hover:border-blue-500 transition text-center">
+                        <div class="w-16 h-16 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-8-6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">JavaScript Guide</h3>
+                        <p class="text-gray-400 mb-4">Modern JavaScript ES6+ complete handbook</p>
+                        <button class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-lg hover:bg-blue-500/30 transition w-full">Download</button>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-lg p-8 border border-gray-700 hover:border-blue-500 transition text-center">
+                        <div class="w-16 h-16 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-8-6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">React Documentation</h3>
+                        <p class="text-gray-400 mb-4">Official React hooks and components guide</p>
+                        <button class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-lg hover:bg-blue-500/30 transition w-full">Download</button>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-lg p-8 border border-gray-700 hover:border-blue-500 transition text-center">
+                        <div class="w-16 h-16 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-8-6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Full-Stack Bundle</h3>
+                        <p class="text-gray-400 mb-4">Complete Node.js, Express & MongoDB guide</p>
+                        <button class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-lg hover:bg-blue-500/30 transition w-full">Download</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 px-4 bg-gradient-to-r from-blue-600 to-cyan-600">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to Start Learning?</h2>
+                <p class="text-lg text-blue-100 mb-8">Join thousands of learners mastering web development today</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="document.getElementById('login-modal').classList.remove('hidden')" class="px-8 py-3 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 transition">
+                        Get Started Free
+                    </button>
+                    <a href="courses/all-courses.html" class="px-8 py-3 bg-blue-700 text-white font-bold rounded-lg border-2 border-white hover:bg-blue-800 transition">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 w-full max-w-md">
+            <button onclick="document.getElementById('login-modal').classList.add('hidden')" class="float-right text-gray-400 hover:text-white">✕</button>
+            
+            <div class="flex justify-center mb-8">
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center">
+                    <span class="text-2xl font-bold text-gray-900">DL</span>
+                </div>
+            </div>
+            
+            <h2 class="text-3xl font-bold text-center mb-2">Welcome to DevLearn</h2>
+            <p class="text-gray-400 text-center mb-8">Sign in to access your courses</p>
+
+            <form onsubmit="handleLogin(event)">
+                <div class="mb-4">
+                    <label class="block text-sm font-semibold mb-2">Email Address</label>
+                    <input type="email" required class="w-full px-4 py-2 bg-gray-900 border border-gray-600 rounded-lg focus:border-blue-500 outline-none transition" placeholder="your@email.com">
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold mb-2">Password</label>
+                    <input type="password" required class="w-full px-4 py-2 bg-gray-900 border border-gray-600 rounded-lg focus:border-blue-500 outline-none transition" placeholder="••••••••">
+                </div>
+
+                <button type="submit" class="w-full py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-semibold hover:shadow-lg transition mb-4">
+                    Sign In
+                </button>
+            </form>
+
+            <p class="text-center text-gray-400">
+                Don't have an account? <a href="#" class="text-blue-400 hover:text-blue-300">Sign up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-bold text-lg mb-4">DevLearn</h4>
+                    <p class="text-gray-400">Master web development with comprehensive courses and projects.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Courses</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="courses/html-fundamentals.html" class="hover:text-blue-400 transition">HTML</a></li>
+                        <li><a href="courses/css-styling.html" class="hover:text-blue-400 transition">CSS</a></li>
+                        <li><a href="courses/javascript-essentials.html" class="hover:text-blue-400 transition">JavaScript</a></li>
+                        <li><a href="courses/react-fundamentals.html" class="hover:text-blue-400 transition">React</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="resources/all-resources.html" class="hover:text-blue-400 transition">Documentation</a></li>
+                        <li><a href="projects/all-projects.html" class="hover:text-blue-400 transition">Projects</a></li>
+                        <li><a href="courses/all-courses.html" class="hover:text-blue-400 transition">All Courses</a></li>
+                        <li><a href="index.html" class="hover:text-blue-400 transition">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-500 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-500 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-500 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2026 DevLearn. All rights reserved. Built with ❤️ for learners.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput?.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            console.log('Searching for:', query);
+        });
+
+        // Login handler
+        function handleLogin(e) {
+            e.preventDefault();
+            alert('Login successful! (Demo mode)');
+            document.getElementById('login-modal').classList.add('hidden');
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

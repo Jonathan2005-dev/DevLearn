@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../tailwind/tailwind-all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Essentials - DevLearn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg"></div>
+                    <span class="text-2xl font-bold">DevLearn</span>
+                </a>
+                <a href="../index.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Header -->
+    <section class="bg-gradient-to-r from-yellow-600 to-orange-600 py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-6 mb-6">
+                <div class="w-24 h-24 bg-white/20 rounded-lg flex items-center justify-center text-5xl">⚡</div>
+                <div>
+                    <h1 class="text-4xl font-bold mb-2">JavaScript Essentials</h1>
+                    <p class="text-white/80">From basics to advanced ES6+ concepts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="md:col-span-2">
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+                    <h2 class="text-3xl font-bold mb-4">Course Overview</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        JavaScript is the programming language of the web. This comprehensive course takes you from complete beginner to confident JavaScript developer. Learn variables, functions, objects, DOM manipulation, and modern ES6+ features like arrow functions, destructuring, and async/await. Build real applications and master the skills needed for professional development.
+                    </p>
+                </div>
+
+                <!-- Lessons -->
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-8">
+                    <h2 class="text-3xl font-bold mb-6">Course Lessons (25 Lessons)</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">1. JavaScript Basics</h3>
+                                    <p class="text-gray-400">Setup, console, and first program</p>
+                                </div>
+                                <div class="text-gray-500">15 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">2. Variables & Data Types</h3>
+                                    <p class="text-gray-400">let, const, var, and data types</p>
+                                </div>
+                                <div class="text-gray-500">20 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">3. Operators & Control Flow</h3>
+                                    <p class="text-gray-400">if, else, loops, and logical operators</p>
+                                </div>
+                                <div class="text-gray-500">25 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">4. Functions & Scope</h3>
+                                    <p class="text-gray-400">Function declaration, expression, and scope</p>
+                                </div>
+                                <div class="text-gray-500">28 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">5. Arrow Functions & ES6</h3>
+                                    <p class="text-gray-400">Modern function syntax and destructuring</p>
+                                </div>
+                                <div class="text-gray-500">24 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">6. Objects & Arrays</h3>
+                                    <p class="text-gray-400">Object literals, methods, and array methods</p>
+                                </div>
+                                <div class="text-gray-500">30 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">7. DOM Manipulation</h3>
+                                    <p class="text-gray-400">Selecting, creating, and modifying elements</p>
+                                </div>
+                                <div class="text-gray-500">28 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">8. Events & Event Listeners</h3>
+                                    <p class="text-gray-400">Click events, form handling, and delegation</p>
+                                </div>
+                                <div class="text-gray-500">26 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">9. Async JavaScript</h3>
+                                    <p class="text-gray-400">Callbacks, promises, and async/await</p>
+                                </div>
+                                <div class="text-gray-500">32 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">10. Fetch API & JSON</h3>
+                                    <p class="text-gray-400">Making API requests and working with data</p>
+                                </div>
+                                <div class="text-gray-500">28 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">11. Classes & OOP</h3>
+                                    <p class="text-gray-400">Object-oriented programming with classes</p>
+                                </div>
+                                <div class="text-gray-500">26 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">12. Error Handling</h3>
+                                    <p class="text-gray-400">Try/catch and debugging techniques</p>
+                                </div>
+                                <div class="text-gray-500">20 min</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">13-25. Advanced Topics & Projects</h3>
+                                    <p class="text-gray-400">Module systems, localStorage, and capstone</p>
+                                </div>
+                                <div class="text-gray-500">180 min</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Course Details</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Level</span>
+                            <span class="font-semibold">Beginner</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Lessons</span>
+                            <span class="font-semibold">25</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Duration</span>
+                            <span class="font-semibold">8 weeks</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Students</span>
+                            <span class="font-semibold">3,891+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">What You'll Learn</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start"><span class="text-yellow-400 mr-2">✓</span> JS Fundamentals</li>
+                        <li class="flex items-start"><span class="text-yellow-400 mr-2">✓</span> ES6+ Features</li>
+                        <li class="flex items-start"><span class="text-yellow-400 mr-2">✓</span> DOM Manipulation</li>
+                        <li class="flex items-start"><span class="text-yellow-400 mr-2">✓</span> Async Programming</li>
+                        <li class="flex items-start"><span class="text-yellow-400 mr-2">✓</span> API Integration</li>
+                        <li class="flex items-start"><span class="text-yellow-400 mr-2">✓</span> OOP & Classes</li>
+                    </ul>
+                </div>
+
+                <button class="w-full py-3 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg font-semibold hover:shadow-lg transition">
+                    Enroll Now
+                </button>
+
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Resources</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="text-yellow-400 hover:text-yellow-300 flex items-center">
+                            <span class="mr-2">📄</span> Cheatsheet
+                        </a>
+                        <a href="#" class="text-yellow-400 hover:text-yellow-300 flex items-center">
+                            <span class="mr-2">💻</span> Code Examples
+                        </a>
+                        <a href="#" class="text-yellow-400 hover:text-yellow-300 flex items-center">
+                            <span class="mr-2">📥</span> Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-8 px-4 mt-12">
+        <div class="max-w-7xl mx-auto text-center text-gray-400">
+            <p>&copy; 2026 DevLearn. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../tailwind/tailwind-all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects - DevLearn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg"></div>
+                    <span class="text-2xl font-bold">DevLearn</span>
+                </a>
+                <a href="../index.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg">Back</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-gradient-to-r from-purple-600 to-pink-600 py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-5xl font-bold mb-4">All Projects</h1>
+            <p class="text-xl text-white/80">Build real-world applications and boost your portfolio</p>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="mb-8 flex flex-wrap gap-3">
+            <button class="px-4 py-2 bg-white text-gray-900 rounded-full">All Projects</button>
+            <button class="px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700">Beginner</button>
+            <button class="px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700">Intermediate</button>
+            <button class="px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700">Advanced</button>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <a href="portfolio-website.html" class="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-400 transition">
+                <div class="h-40 bg-gradient-to-r from-blue-600/80 to-cyan-600/80"></div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Portfolio Website</h3>
+                    <p class="text-white/80 mb-2">Beginner • 2 Weeks</p>
+                    <p class="text-sm text-white/70">Create a stunning personal portfolio</p>
+                </div>
+            </a>
+
+            <a href="todo-app.html" class="bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl overflow-hidden border border-gray-700 hover:border-purple-400 transition">
+                <div class="h-40 bg-gradient-to-r from-purple-600/80 to-pink-600/80"></div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">React Todo App</h3>
+                    <p class="text-white/80 mb-2">Beginner • 1 Week</p>
+                    <p class="text-sm text-white/70">Build interactive todo with React</p>
+                </div>
+            </a>
+
+            <a href="weather-app.html" class="bg-gradient-to-br from-green-600 to-emerald-600 rounded-xl overflow-hidden border border-gray-700 hover:border-green-400 transition">
+                <div class="h-40 bg-gradient-to-r from-green-600/80 to-emerald-600/80"></div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Weather App</h3>
+                    <p class="text-white/80 mb-2">Intermediate • 2 Weeks</p>
+                    <p class="text-sm text-white/70">Fetch and display real weather data</p>
+                </div>
+            </a>
+
+            <a href="ecommerce-store.html" class="bg-gradient-to-br from-orange-600 to-red-600 rounded-xl overflow-hidden border border-gray-700 hover:border-orange-400 transition">
+                <div class="h-40 bg-gradient-to-r from-orange-600/80 to-red-600/80"></div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">E-commerce Store</h3>
+                    <p class="text-white/80 mb-2">Advanced • 6 Weeks</p>
+                    <p class="text-sm text-white/70">Full-stack e-commerce platform</p>
+                </div>
+            </a>
+
+            <a href="social-dashboard.html" class="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl overflow-hidden border border-gray-700 hover:border-indigo-400 transition">
+                <div class="h-40 bg-gradient-to-r from-indigo-600/80 to-purple-600/80"></div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Social Dashboard</h3>
+                    <p class="text-white/80 mb-2">Intermediate • 3 Weeks</p>
+                    <p class="text-sm text-white/70">Analytics dashboard with charts</p>
+                </div>
+            </a>
+
+            <a href="chat-application.html" class="bg-gradient-to-br from-pink-600 to-rose-600 rounded-xl overflow-hidden border border-gray-700 hover:border-pink-400 transition">
+                <div class="h-40 bg-gradient-to-r from-pink-600/80 to-rose-600/80"></div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Chat Application</h3>
+                    <p class="text-white/80 mb-2">Advanced • 4 Weeks</p>
+                    <p class="text-sm text-white/70">Real-time chat with WebSockets</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 border-t border-gray-700 py-8 px-4 mt-12">
+        <div class="max-w-7xl mx-auto text-center text-gray-400">
+            <p>&copy; 2026 DevLearn. All rights reserved.</p>

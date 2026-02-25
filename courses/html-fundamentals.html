@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../tailwind/tailwind-all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Fundamentals - DevLearn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg"></div>
+                    <span class="text-2xl font-bold">DevLearn</span>
+                </a>
+                <a href="../index.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Header -->
+    <section class="bg-gradient-to-r from-orange-600 to-red-600 py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-6 mb-6">
+                <div class="w-24 h-24 bg-white/20 rounded-lg flex items-center justify-center text-5xl">📄</div>
+                <div>
+                    <h1 class="text-4xl font-bold mb-2">HTML Fundamentals</h1>
+                    <p class="text-white/80">Master the building blocks of web development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <!-- Course Overview -->
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="md:col-span-2">
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+                    <h2 class="text-3xl font-bold mb-4">Course Overview</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        HTML (HyperText Markup Language) is the standard markup language for creating web pages. This comprehensive course will teach you how to structure content semantically, create accessible forms, and follow modern HTML5 best practices. Whether you're a complete beginner or looking to refresh your skills, this course will give you a solid foundation for web development.
+                    </p>
+                </div>
+
+                <!-- Lessons -->
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-8">
+                    <h2 class="text-3xl font-bold mb-6">Course Lessons</h2>
+                    
+                    <div class="space-y-4">
+                        <!-- Lesson 1 -->
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-orange-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">1. Introduction to HTML</h3>
+                                    <p class="text-gray-400">Learn what HTML is and its role in web development</p>
+                                </div>
+                                <div class="text-gray-500">15 min</div>
+                            </div>
+                        </div>
+
+                        <!-- Lesson 2 -->
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-orange-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">2. HTML Document Structure</h3>
+                                    <p class="text-gray-400">Understand DOCTYPE, html, head, and body tags</p>
+                                </div>
+                                <div class="text-gray-500">20 min</div>
+                            </div>
+                        </div>
+
+                        <!-- Lesson 3 -->
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-orange-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">3. Text and Heading Tags</h3>
+                                    <p class="text-gray-400">h1-h6 tags, paragraphs, and text formatting</p>
+                                </div>
+                                <div class="text-gray-500">18 min</div>
+                            </div>
+                        </div>
+
+                        <!-- Lesson 4 -->
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-orange-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">4. Links and Navigation</h3>
+                                    <p class="text-gray-400">Anchor tags, URLs, and creating navigation menus</p>
+                                </div>
+                                <div class="text-gray-500">22 min</div>
+                            </div>
+                        </div>
+
+                        <!-- Lesson 5 -->
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-orange-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">5. Images and Media</h3>
+                                    <p class="text-gray-400">Image tags, alt text, and media elements</p>
+                                </div>
+                                <div class="text-gray-500">20 min</div>
+                            </div>
+                        </div>
+
+                        <!-- Lesson 6 -->
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-orange-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">6. Lists and Tables</h3>
+                                    <p class="text-gray-400">Ordered, unordered lists, and HTML tables</p>
+                                </div>
+                                <div class="text-gray-500">25 min</div>
+                            </div>
+                        </div>
+
+                        <!-- Lesson 7 -->
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-orange-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">7. HTML Forms</h3>
+                                    <p class="text-gray-400">Form elements, inputs, and validation attributes</p>
+                                </div>
+                                <div class="text-gray-500">30 min</div>
+                            </div>
+                        </div>
+
+                        <!-- Lesson 8 -->
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-orange-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">8. Semantic HTML5</h3>
+                                    <p class="text-gray-400">header, nav, main, article, section, footer tags</p>
+                                </div>
+                                <div class="text-gray-500">28 min</div>
+                            </div>
+                        </div>
+
+                        <!-- Lesson 9 -->
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-orange-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">9. Meta Tags and SEO</h3>
+                                    <p class="text-gray-400">Character sets, viewport, and search engine optimization</p>
+                                </div>
+                                <div class="text-gray-500">24 min</div>
+                            </div>
+                        </div>
+
+                        <!-- Lesson 10 -->
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-orange-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">10. Accessibility (a11y)</h3>
+                                    <p class="text-gray-400">ARIA attributes and accessible HTML patterns</p>
+                                </div>
+                                <div class="text-gray-500">26 min</div>
+                            </div>
+                        </div>
+
+                        <!-- Lesson 11 -->
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-orange-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">11. Best Practices</h3>
+                                    <p class="text-gray-400">Code organization, naming conventions, and standards</p>
+                                </div>
+                                <div class="text-gray-500">20 min</div>
+                            </div>
+                        </div>
+
+                        <!-- Lesson 12 -->
+                        <div class="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-orange-500 transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">12. Final Project</h3>
+                                    <p class="text-gray-400">Build a complete HTML website from scratch</p>
+                                </div>
+                                <div class="text-gray-500">60 min</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Course Stats -->
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Course Details</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Level</span>
+                            <span class="font-semibold">Beginner</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Lessons</span>
+                            <span class="font-semibold">12</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Duration</span>
+                            <span class="font-semibold">4 weeks</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Students</span>
+                            <span class="font-semibold">1,234+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What You Learn -->
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">What You'll Learn</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start"><span class="text-orange-400 mr-2">✓</span> HTML5 syntax</li>
+                        <li class="flex items-start"><span class="text-orange-400 mr-2">✓</span> Semantic markup</li>
+                        <li class="flex items-start"><span class="text-orange-400 mr-2">✓</span> Form creation</li>
+                        <li class="flex items-start"><span class="text-orange-400 mr-2">✓</span> Accessibility</li>
+                        <li class="flex items-start"><span class="text-orange-400 mr-2">✓</span> SEO basics</li>
+                        <li class="flex items-start"><span class="text-orange-400 mr-2">✓</span> Best practices</li>
+                    </ul>
+                </div>
+
+                <!-- Enroll Button -->
+                <button class="w-full py-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg font-semibold hover:shadow-lg transition">
+                    Enroll Now
+                </button>
+
+                <!-- Resources -->
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Resources</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="text-orange-400 hover:text-orange-300 flex items-center">
+                            <span class="mr-2">📄</span> Course Notes
+                        </a>
+                        <a href="#" class="text-orange-400 hover:text-orange-300 flex items-center">
+                            <span class="mr-2">🔗</span> Reference Links
+                        </a>
+                        <a href="#" class="text-orange-400 hover:text-orange-300 flex items-center">
+                            <span class="mr-2">📥</span> Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-8 px-4 mt-12">
+        <div class="max-w-7xl mx-auto text-center text-gray-400">
+            <p>&copy; 2026 DevLearn. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive lesson opening
+        document.querySelectorAll('.bg-gray-900').forEach(lesson => {
+            lesson.addEventListener('click', function() {
+                alert('Lesson content would open here in a full version');
+            });
+        });
+    </script>
+</body>
+</html>

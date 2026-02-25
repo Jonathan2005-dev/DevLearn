@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../tailwind/tailwind-all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Courses - DevLearn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg"></div>
+                    <span class="text-2xl font-bold">DevLearn</span>
+                </a>
+                <a href="../index.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-gradient-to-r from-blue-600 to-cyan-600 py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-5xl font-bold mb-4">All Courses</h1>
+            <p class="text-xl text-white/80">Choose your learning path and master web development</p>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="mb-8 flex flex-wrap gap-3">
+            <button class="category-pill active px-4 py-2 bg-white text-gray-900 rounded-full">All Courses</button>
+            <button class="category-pill px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700">Frontend</button>
+            <button class="category-pill px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700">Backend</button>
+            <button class="category-pill px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700">Full-Stack</button>
+            <button class="category-pill px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700">Beginner</button>
+            <button class="category-pill px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700">Advanced</button>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <a href="html-fundamentals.html" class="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-orange-500 transition">
+                <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg mb-4 flex items-center justify-center text-2xl">📄</div>
+                <h3 class="text-2xl font-bold mb-2">HTML Fundamentals</h3>
+                <p class="text-gray-400 mb-4">12 Lessons • 4 Weeks</p>
+                <p class="text-sm text-gray-300">Build the foundation of web development with semantic HTML5</p>
+            </a>
+
+            <a href="css-styling.html" class="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-blue-500 transition">
+                <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-lg mb-4 flex items-center justify-center text-2xl">🎨</div>
+                <h3 class="text-2xl font-bold mb-2">CSS & Styling</h3>
+                <p class="text-gray-400 mb-4">18 Lessons • 6 Weeks</p>
+                <p class="text-sm text-gray-300">Master Bootstrap, Tailwind, and modern CSS techniques</p>
+            </a>
+
+            <a href="javascript-essentials.html" class="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-yellow-500 transition">
+                <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg mb-4 flex items-center justify-center text-2xl">⚡</div>
+                <h3 class="text-2xl font-bold mb-2">JavaScript Essentials</h3>
+                <p class="text-gray-400 mb-4">25 Lessons • 8 Weeks</p>
+                <p class="text-sm text-gray-300">Learn modern JavaScript from basics to ES6+ features</p>
+            </a>
+
+            <a href="react-fundamentals.html" class="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-cyan-500 transition">
+                <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg mb-4 flex items-center justify-center text-2xl">⚛️</div>
+                <h3 class="text-2xl font-bold mb-2">React for Beginners</h3>
+                <p class="text-gray-400 mb-4">20 Lessons • 7 Weeks</p>
+                <p class="text-sm text-gray-300">Build interactive UIs with React components and hooks</p>
+            </a>
+
+            <a href="nodejs-backend.html" class="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-green-500 transition">
+                <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-600 rounded-lg mb-4 flex items-center justify-center text-2xl">🟢</div>
+                <h3 class="text-2xl font-bold mb-2">Node.js & Express</h3>
+                <p class="text-gray-400 mb-4">22 Lessons • 7 Weeks</p>
+                <p class="text-sm text-gray-300">Build backend applications with Node.js and Express</p>
+            </a>
+
+            <a href="mongodb-database.html" class="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-teal-500 transition">
+                <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg mb-4 flex items-center justify-center text-2xl">📊</div>
+                <h3 class="text-2xl font-bold mb-2">MongoDB & Databases</h3>
+                <p class="text-gray-400 mb-4">16 Lessons • 5 Weeks</p>
+                <p class="text-sm text-gray-300">Master MongoDB and database design patterns</p>
+            </a>
+
+            <a href="fullstack-advanced.html" class="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-purple-500 transition">
+                <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-600 rounded-lg mb-4 flex items-center justify-center text-2xl">⚡</div>
+                <h3 class="text-2xl font-bold mb-2">Full-Stack Development</h3>
+                <p class="text-gray-400 mb-4">35 Lessons • 12 Weeks</p>
+                <p class="text-sm text-gray-300">Build complete production applications</p>
+            </a>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 border-t border-gray-700 py-8 px-4 mt-12">
+        <div class="max-w-7xl mx-auto text-center text-gray-400">
+            <p>&copy; 2026 DevLearn. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
