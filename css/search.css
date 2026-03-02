@@ -1,0 +1,4 @@
+#searchResults mark { background: #fde68a; color: #0f172a; padding: 0 0.12rem; border-radius: 2px; }
+#searchResults a { text-decoration: none; }
+#searchResults::-webkit-scrollbar { height: 8px; width: 8px; }
+#searchResults::-webkit-scrollbar-thumb { background: rgba(15,23,42,0.2); border-radius: 8px; }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/x-icon" href="images/icon.png">
     <link rel="stylesheet" type="text/css" href="tailwind/tailwind-all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -70,6 +71,8 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="css/theme-toggle.css">
+    <link rel="stylesheet" href="css/search.css">
 </head>
 <body class="bg-gray-900 text-white">
     <!-- Navigation -->
@@ -77,7 +80,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="index.html" class="flex items-center space-x-2 cursor-pointer">
-                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg"></div>
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg"><img src="images/icon.png"></div>
                     <span class="text-2xl font-bold">DevLearn</span>
                 </a>
                 
@@ -89,11 +92,12 @@
                 </div>
 
                 <div class="flex items-center space-x-4">
-                    <button class="p-2 hover:bg-gray-800 rounded-lg transition">
+                    <button title="Search" class="p-2 hover:bg-gray-800 rounded-lg transition">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </button>
+                    <button id="theme-toggle" class="p-2 hover:bg-gray-800 rounded-lg transition" aria-label="Toggle theme"></button>
                     <button onclick="document.getElementById('login-modal').classList.remove('hidden')" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-semibold hover:shadow-lg transition">
                         Get Started
                     </button>
@@ -127,7 +131,7 @@
                     Learn HTML, CSS, JavaScript, React, and Full-Stack development with comprehensive courses, real-world projects, and offline resources.
                 </p>
 
-                <div class="flex items-center bg-white rounded-full px-6 py-3 max-w-xl mx-auto shadow-xl hover:shadow-2xl transition">
+                <div class="flex items-center bg-white rounded-full px-6 py-3 max-w-xl mx-auto shadow-xl hover:shadow-2xl transition relative">
                     <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
@@ -136,6 +140,7 @@
                         placeholder="Search courses, resources..." 
                         class="flex-1 bg-transparent ml-4 outline-none text-gray-800 placeholder-gray-400"
                         id="searchInput"
+                        autocomplete="off"
                     >
                 </div>
             </div>
@@ -557,13 +562,13 @@
         </div>
     </footer>
 
+    <script src="js/search-index.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/theme-toggle.js"></script>
+
     <script>
         // Search functionality
-        const searchInput = document.getElementById('searchInput');
-        searchInput?.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
-            console.log('Searching for:', query);
-        });
+        // (Search handled by js/search.js using the index in js/search-index.js)
 
         // Login handler
         function handleLogin(e) {

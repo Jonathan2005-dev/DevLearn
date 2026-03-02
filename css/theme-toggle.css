@@ -1,0 +1,32 @@
+/* Theme toggle button basic styles */
+#theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+/* Light theme overrides (uses !important to override utility classes) */
+body.light {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+body.light .text-white { color: #0f172a !important; }
+body.light .text-gray-400, body.light .text-white\/80, body.light .text-white\/70 { color: #475569 !important; }
+body.light .bg-gray-900, body.light .bg-gray-900\/80, body.light .bg-gray-900\/50, body.light .bg-gray-800, body.light .bg-gray-800\/50 { background-color: transparent !important; background: none !important; }
+body.light .bg-white { background-color: #ffffff !important; }
+body.light .bg-white\/20 { background-color: rgba(255,255,255,0.9) !important; }
+body.light .border-gray-800, body.light .border-gray-700 { border-color: #e2e8f0 !important; }
+body.light .card-hover:hover { box-shadow: 0 12px 24px rgba(15,23,42,0.06) !important; transform: translateY(-4px) !important; }
+
+/* Ensure buttons and links remain visible */
+body.light a, body.light .category-pill { color: inherit !important; }
+
+/* Small accessibility focus for toggle button */
+#theme-toggle:focus { outline: 2px solid rgba(59,130,246,0.6); outline-offset: 2px; }

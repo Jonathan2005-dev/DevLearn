@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="../tailwind/tailwind-all.min.css">
+    <link rel="icon" type="image/x-icon" href="../images/icon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MongoDB & Databases - DevLearn</title>
@@ -10,6 +11,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
         * { font-family: 'Poppins', sans-serif; }
     </style>
+        <link rel="stylesheet" href="../css/theme-toggle.css">
 </head>
 <body class="bg-gray-900 text-white">
     <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
@@ -19,7 +21,8 @@
                     <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg"></div>
                     <span class="text-2xl font-bold">DevLearn</span>
                 </a>
-                <a href="../index.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg">Back</a>
+                    <a href="../index.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg">Back to Home</a>
+                    <button id="theme-toggle" class="p-2 hover:bg-gray-800 rounded-lg transition ml-2" aria-label="Toggle theme"></button>
             </div>
         </div>
     </nav>
@@ -149,5 +152,6 @@
             <p>&copy; 2026 DevLearn. All rights reserved.</p>
         </div>
     </footer>
+    <script src="../js/theme-toggle.js"></script>
 </body>
 </html>
