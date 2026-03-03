@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../../tailwind/tailwind-all.min.css">
+    <link rel="icon" type="image/x-icon" href="../../images/icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2: HTML Document Structure - DevLearn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
+        
+        .CodeMirror {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        .lesson-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .lesson-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .code-editor {
+            border: 1px solid #374151;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .preview-pane {
+            border: 1px solid #374151;
+            border-radius: 8px;
+            background: white;
+            color: #1f2937;
+            padding: 1rem;
+            overflow: auto;
+            min-height: 400px;
+        }
+        
+        .run-btn {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 1rem 0;
+        }
+        
+        .run-btn:hover {
+            box-shadow: 0 8px 16px rgba(249, 115, 22, 0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+    <script src="../../js/theme-toggle.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center"><img src="../../images/icon.png" alt="DevLearn icon" class="w-6 h-6"></div>
+                    <span class="text-2xl font-bold">DevLearn</span>
+                </a>
+                <a href="html-fundamentals.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg">← Back to Course</a>
+                <button id="theme-toggle" class="p-2 hover:bg-gray-800 rounded-lg transition ml-2" aria-label="Toggle theme"></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Lesson Header -->
+    <section class="bg-gradient-to-r from-orange-600 to-red-600 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl font-bold mb-2">Lesson 2: HTML Document Structure</h1>
+            <p class="text-white/80 text-lg">Understand DOCTYPE, html, head, and body tags</p>
+        </div>
+    </section>
+
+    <!-- Lesson Content -->
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <!-- Learning Objectives -->
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">📚 Learning Objectives</h2>
+            <ul class="space-y-2 text-gray-300">
+                <li>✓ Understand the purpose of DOCTYPE</li>
+                <li>✓ Learn the root HTML element structure</li>
+                <li>✓ Understand the HEAD section and metadata</li>
+                <li>✓ Understand the BODY section and content</li>
+                <li>✓ Create a complete HTML5 document</li>
+            </ul>
+        </div>
+
+        <!-- Concept Explanation -->
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">💡 Document Structure</h2>
+            <p class="text-gray-300 mb-4">
+                Every HTML document follows a specific structure. The &lt;html&gt; element is the root, containing two main sections: &lt;head&gt; and &lt;body&gt;.
+            </p>
+            <p class="text-gray-300 mb-4">
+                <strong>The HEAD section</strong> contains metadata and configuration information like the page title, character encoding, viewport settings, and links to stylesheets. This content is not directly visible on the webpage.
+            </p>
+            <p class="text-gray-300">
+                <strong>The BODY section</strong> contains all the visible content of the webpage including headings, paragraphs, images, links, and more.
+            </p>
+        </div>
+
+        <!-- Interactive Code Example -->
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">✏️ Try It Yourself</h2>
+            <p class="text-gray-300 mb-4">Edit the HTML code and see how the head and body structure works:</p>
+            
+            <div class="lesson-container">
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">HTML Code:</h3>
+                    <textarea id="codeEditor">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Structured Page&lt;/title&gt;
+    &lt;style&gt;
+        body { background: #f0f0f0; font-family: Arial; }
+        h1 { color: #ff6b6b; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to Structured HTML!&lt;/h1&gt;
+    &lt;p&gt;This document has a proper structure with head and body sections.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Preview:</h3>
+                    <button class="run-btn" onclick="runCode()">▶ Run Example</button>
+                    <div class="preview-pane" id="preview"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Elements -->
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8">
+            <h2 class="text-2xl font-bold mb-4">🔑 Important Meta Tags</h2>
+            <div class="space-y-4">
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">&lt;meta charset="UTF-8"&gt;</p>
+                    <p class="text-gray-300">Specifies the character encoding for the document</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">&lt;meta name="viewport"&gt;</p>
+                    <p class="text-gray-300">Controls layout and scaling on mobile devices</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">&lt;title&gt;</p>
+                    <p class="text-gray-300">Sets the browser tab title and page name</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-between mt-12">
+            <a href="lesson-1.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition">← Previous Lesson</a>
+            <a href="lesson-3.html" class="px-6 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg transition">Next Lesson →</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script>
+        const editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+            mode: 'htmlmixed',
+            theme: 'dracula',
+            lineNumbers: true,
+            autoCloseTags: true,
+            matchBrackets: true,
+            lineWrapping: true,
+            height: '400px'
+        });
+
+        function runCode() {
+            const code = editor.getValue();
+            const preview = document.getElementById('preview');
+            preview.innerHTML = code;
+        }
+
+        runCode();
+    </script>
+    <link rel="stylesheet" href="../../css/theme-toggle.css">
+</body>
+</html>

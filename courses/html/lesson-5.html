@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../../tailwind/tailwind-all.min.css">
+    <link rel="icon" type="image/x-icon" href="../../images/icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5: Images and Media - DevLearn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
+        .CodeMirror { font-family: 'Courier New', monospace; font-size: 14px; }
+        .lesson-container { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        @media (max-width: 1024px) { .lesson-container { grid-template-columns: 1fr; } }
+        .preview-pane { border: 1px solid #374151; border-radius: 8px; background: white; color: #1f2937; padding: 1rem; overflow: auto; min-height: 400px; }
+        .run-btn { background: linear-gradient(135deg, #f97316, #ea580c); color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin: 1rem 0; }
+        .run-btn:hover { box-shadow: 0 8px 16px rgba(249, 115, 22, 0.3); transform: translateY(-2px); }
+    </style>
+    <script src="../../js/theme-toggle.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center"><img src="../../images/icon.png" alt="DevLearn icon" class="w-6 h-6"></div>
+                    <span class="text-2xl font-bold">DevLearn</span>
+                </a>
+                <a href="html-fundamentals.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg">← Back to Course</a>
+                <button id="theme-toggle" class="p-2 hover:bg-gray-800 rounded-lg transition ml-2" aria-label="Toggle theme"></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-gradient-to-r from-orange-600 to-red-600 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl font-bold mb-2">Lesson 5: Images and Media</h1>
+            <p class="text-white/80 text-lg">Image tags, alt text, and media elements</p>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">📚 Learning Objectives</h2>
+            <ul class="space-y-2 text-gray-300">
+                <li>✓ Embed images with the &lt;img&gt; tag</li>
+                <li>✓ Understand and use alt text</li>
+                <li>✓ Control image dimensions</li>
+                <li>✓ Embed audio and video</li>
+                <li>✓ Make media responsive</li>
+            </ul>
+        </div>
+
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">💡 Images and Media</h2>
+            <p class="text-gray-300 mb-4">
+                The &lt;img&gt; tag is used to embed images. The <strong>src</strong> attribute specifies the image file, and <strong>alt</strong> provides alternative text for accessibility.
+            </p>
+            <p class="text-gray-300 mb-4">
+                HTML5 supports &lt;audio&gt; and &lt;video&gt; tags for embedding media directly without plugins.
+            </p>
+        </div>
+
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">✏️ Try It Yourself</h2>
+            <p class="text-gray-300 mb-4">Add images and multimedia to your page:</p>
+            
+            <div class="lesson-container">
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">HTML Code:</h3>
+                    <textarea id="codeEditor">&lt;h1&gt;Images and Media&lt;/h1&gt;
+
+&lt;h2&gt;Image Example&lt;/h2&gt;
+&lt;img src="https://via.placeholder.com/300x200" alt="Sample Image" width="300" height="200"&gt;
+
+&lt;h2&gt;Image with Caption&lt;/h2&gt;
+&lt;figure&gt;
+  &lt;img src="https://via.placeholder.com/400x300" alt="Beautiful Landscape"&gt;
+  &lt;figcaption&gt;A beautiful landscape photo&lt;/figcaption&gt;
+&lt;/figure&gt;</textarea>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Preview:</h3>
+                    <button class="run-btn" onclick="runCode()">▶ Run Example</button>
+                    <div class="preview-pane" id="preview"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8">
+            <h2 class="text-2xl font-bold mb-4">🔑 Image Attributes</h2>
+            <div class="space-y-4">
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">src</p>
+                    <p class="text-gray-300 text-sm">Path to the image file (required)</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">alt</p>
+                    <p class="text-gray-300 text-sm">Alternative text for accessibility (required)</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">width & height</p>
+                    <p class="text-gray-300 text-sm">Image dimensions in pixels</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-between mt-12">
+            <a href="lesson-4.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition">← Previous Lesson</a>
+            <a href="lesson-6.html" class="px-6 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg transition">Next Lesson →</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script>
+        const editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+            mode: 'htmlmixed',
+            theme: 'dracula',
+            lineNumbers: true,
+            autoCloseTags: true,
+            matchBrackets: true,
+            lineWrapping: true,
+            height: '400px'
+        });
+
+        function runCode() {
+            const code = editor.getValue();
+            const preview = document.getElementById('preview');
+            preview.innerHTML = code;
+        }
+
+        runCode();
+    </script>
+    <link rel="stylesheet" href="../../css/theme-toggle.css">
+</body>
+</html>

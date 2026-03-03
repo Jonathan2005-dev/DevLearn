@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../../tailwind/tailwind-all.min.css">
+    <link rel="icon" type="image/x-icon" href="../../images/icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4: Links and Navigation - DevLearn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
+        .CodeMirror { font-family: 'Courier New', monospace; font-size: 14px; }
+        .lesson-container { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        @media (max-width: 1024px) { .lesson-container { grid-template-columns: 1fr; } }
+        .preview-pane { border: 1px solid #374151; border-radius: 8px; background: white; color: #1f2937; padding: 1rem; overflow: auto; min-height: 400px; }
+        .run-btn { background: linear-gradient(135deg, #f97316, #ea580c); color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin: 1rem 0; }
+        .run-btn:hover { box-shadow: 0 8px 16px rgba(249, 115, 22, 0.3); transform: translateY(-2px); }
+    </style>
+    <script src="../../js/theme-toggle.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center"><img src="../../images/icon.png" alt="DevLearn icon" class="w-6 h-6"></div>
+                    <span class="text-2xl font-bold">DevLearn</span>
+                </a>
+                <a href="html-fundamentals.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg">← Back to Course</a>
+                <button id="theme-toggle" class="p-2 hover:bg-gray-800 rounded-lg transition ml-2" aria-label="Toggle theme"></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-gradient-to-r from-orange-600 to-red-600 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl font-bold mb-2">Lesson 4: Links and Navigation</h1>
+            <p class="text-white/80 text-lg">Anchor tags, URLs, and creating navigation menus</p>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">📚 Learning Objectives</h2>
+            <ul class="space-y-2 text-gray-300">
+                <li>✓ Create hyperlinks with the &lt;a&gt; tag</li>
+                <li>✓ Understand absolute and relative URLs</li>
+                <li>✓ Create internal page navigation</li>
+                <li>✓ Open links in new tabs</li>
+                <li>✓ Build navigation menus</li>
+            </ul>
+        </div>
+
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">💡 The Anchor Tag</h2>
+            <p class="text-gray-300 mb-4">
+                The &lt;a&gt; tag (anchor) is used to create hyperlinks. The <strong>href</strong> attribute specifies the destination URL.
+            </p>
+            <p class="text-gray-300 mb-4">
+                You can link to external websites (absolute URLs), other pages on your site (relative URLs), or sections within the same page (anchors).
+            </p>
+            <p class="text-gray-300">
+                The <strong>target="_blank"</strong> attribute opens links in a new tab, while <strong>target="_self"</strong> (default) opens in the current tab.
+            </p>
+        </div>
+
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">✏️ Try It Yourself</h2>
+            <p class="text-gray-300 mb-4">Create links and a simple navigation menu:</p>
+            
+            <div class="lesson-container">
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">HTML Code:</h3>
+                    <textarea id="codeEditor">&lt;h1&gt;Navigation Menu&lt;/h1&gt;
+
+&lt;nav&gt;
+  &lt;a href="#home"&gt;Home&lt;/a&gt; | 
+  &lt;a href="#about"&gt;About&lt;/a&gt; | 
+  &lt;a href="#services"&gt;Services&lt;/a&gt; | 
+  &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;h2 id="home"&gt;Home Section&lt;/h2&gt;
+&lt;p&gt;Welcome to our home page.&lt;/p&gt;
+
+&lt;h2 id="about"&gt;About Section&lt;/h2&gt;
+&lt;p&gt;Learn about our company.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://www.google.com" target="_blank"&gt;Visit Google (Opens in New Tab)&lt;/a&gt;&lt;/p&gt;</textarea>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Preview:</h3>
+                    <button class="run-btn" onclick="runCode()">▶ Run Example</button>
+                    <div class="preview-pane" id="preview"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8">
+            <h2 class="text-2xl font-bold mb-4">🔑 Link Types</h2>
+            <div class="space-y-4">
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">Absolute URL</p>
+                    <p class="text-gray-300 text-sm">&lt;a href="https://www.example.com"&gt;Link&lt;/a&gt;</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">Relative URL</p>
+                    <p class="text-gray-300 text-sm">&lt;a href="pages/about.html"&gt;Link&lt;/a&gt;</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">Page Anchor</p>
+                    <p class="text-gray-300 text-sm">&lt;a href="#section"&gt;Link&lt;/a&gt;</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-between mt-12">
+            <a href="lesson-3.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition">← Previous Lesson</a>
+            <a href="lesson-5.html" class="px-6 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg transition">Next Lesson →</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script>
+        const editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+            mode: 'htmlmixed',
+            theme: 'dracula',
+            lineNumbers: true,
+            autoCloseTags: true,
+            matchBrackets: true,
+            lineWrapping: true,
+            height: '400px'
+        });
+
+        function runCode() {
+            const code = editor.getValue();
+            const preview = document.getElementById('preview');
+            preview.innerHTML = code;
+        }
+
+        runCode();
+    </script>
+    <link rel="stylesheet" href="../../css/theme-toggle.css">
+</body>
+</html>

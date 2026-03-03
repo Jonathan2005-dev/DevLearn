@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../../tailwind/tailwind-all.min.css">
+    <link rel="icon" type="image/x-icon" href="../../images/icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3: Text and Heading Tags - DevLearn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
+        .CodeMirror { font-family: 'Courier New', monospace; font-size: 14px; }
+        .lesson-container { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        @media (max-width: 1024px) { .lesson-container { grid-template-columns: 1fr; } }
+        .preview-pane { border: 1px solid #374151; border-radius: 8px; background: white; color: #1f2937; padding: 1rem; overflow: auto; min-height: 400px; }
+        .run-btn { background: linear-gradient(135deg, #f97316, #ea580c); color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin: 1rem 0; }
+        .run-btn:hover { box-shadow: 0 8px 16px rgba(249, 115, 22, 0.3); transform: translateY(-2px); }
+    </style>
+    <script src="../../js/theme-toggle.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center"><img src="../../images/icon.png" alt="DevLearn icon" class="w-6 h-6"></div>
+                    <span class="text-2xl font-bold">DevLearn</span>
+                </a>
+                <a href="html-fundamentals.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg">← Back to Course</a>
+                <button id="theme-toggle" class="p-2 hover:bg-gray-800 rounded-lg transition ml-2" aria-label="Toggle theme"></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-gradient-to-r from-orange-600 to-red-600 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl font-bold mb-2">Lesson 3: Text and Heading Tags</h1>
+            <p class="text-white/80 text-lg">h1-h6 tags, paragraphs, and text formatting</p>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">📚 Learning Objectives</h2>
+            <ul class="space-y-2 text-gray-300">
+                <li>✓ Understand heading levels (h1-h6)</li>
+                <li>✓ Learn paragraph and text formatting tags</li>
+                <li>✓ Use emphasis and strong tags correctly</li>
+                <li>✓ Create properly structured text content</li>
+            </ul>
+        </div>
+
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">💡 Headings and Text</h2>
+            <p class="text-gray-300 mb-4">
+                HTML provides six levels of headings (h1-h6) for organizing content. &lt;h1&gt; is the most important, typically used for main titles, while &lt;h6&gt; is the least important.
+            </p>
+            <p class="text-gray-300 mb-4">
+                <strong>&lt;p&gt;</strong> tags define paragraphs, &lt;em&gt; for emphasis (italic), &lt;strong&gt; for strong emphasis (bold), and other formatting tags like &lt;mark&gt;, &lt;del&gt;, and &lt;ins&gt;.
+            </p>
+        </div>
+
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">✏️ Try It Yourself</h2>
+            <p class="text-gray-300 mb-4">Experiment with different heading levels and text formatting:</p>
+            
+            <div class="lesson-container">
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">HTML Code:</h3>
+                    <textarea id="codeEditor">&lt;h1&gt;Main Title (h1)&lt;/h1&gt;
+&lt;h2&gt;Subtitle (h2)&lt;/h2&gt;
+&lt;h3&gt;Section (h3)&lt;/h3&gt;
+
+&lt;p&gt;This is a paragraph. You can use &lt;em&gt;emphasis&lt;/em&gt; and &lt;strong&gt;strong text&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can also use &lt;mark&gt;highlighted text&lt;/mark&gt;, &lt;del&gt;deleted text&lt;/del&gt;, and &lt;ins&gt;inserted text&lt;/ins&gt;.&lt;/p&gt;
+
+&lt;small&gt;This is smaller text.&lt;/small&gt;</textarea>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Preview:</h3>
+                    <button class="run-btn" onclick="runCode()">▶ Run Example</button>
+                    <div class="preview-pane" id="preview"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8">
+            <h2 class="text-2xl font-bold mb-4">🔑 Text Formatting Tags</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">&lt;strong&gt; and &lt;b&gt;</p>
+                    <p class="text-gray-300 text-sm">Bold text (strong is semantic)</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">&lt;em&gt; and &lt;i&gt;</p>
+                    <p class="text-gray-300 text-sm">Italic text (em is semantic)</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">&lt;mark&gt;</p>
+                    <p class="text-gray-300 text-sm">Highlighted or marked text</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">&lt;small&gt;</p>
+                    <p class="text-gray-300 text-sm">Smaller text size</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-between mt-12">
+            <a href="lesson-2.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition">← Previous Lesson</a>
+            <a href="lesson-4.html" class="px-6 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg transition">Next Lesson →</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script>
+        const editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+            mode: 'htmlmixed',
+            theme: 'dracula',
+            lineNumbers: true,
+            autoCloseTags: true,
+            matchBrackets: true,
+            lineWrapping: true,
+            height: '400px'
+        });
+
+        function runCode() {
+            const code = editor.getValue();
+            const preview = document.getElementById('preview');
+            preview.innerHTML = code;
+        }
+
+        runCode();
+    </script>
+    <link rel="stylesheet" href="../../css/theme-toggle.css">
+</body>
+</html>

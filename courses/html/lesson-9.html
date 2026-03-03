@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../../tailwind/tailwind-all.min.css">
+    <link rel="icon" type="image/x-icon" href="../../images/icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 9: Meta Tags and SEO - DevLearn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
+        .CodeMirror { font-family: 'Courier New', monospace; font-size: 14px; }
+        .preview-pane { border: 1px solid #374151; border-radius: 8px; background: white; color: #1f2937; padding: 1rem; overflow: auto; min-height: 400px; }
+        .run-btn { background: linear-gradient(135deg, #f97316, #ea580c); color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin: 1rem 0; }
+        .run-btn:hover { box-shadow: 0 8px 16px rgba(249, 115, 22, 0.3); transform: translateY(-2px); }
+    </style>
+    <script src="../../js/theme-toggle.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center"><img src="../../images/icon.png" alt="DevLearn icon" class="w-6 h-6"></div>
+                    <span class="text-2xl font-bold">DevLearn</span>
+                </a>
+                <a href="html-fundamentals.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg">← Back to Course</a>
+                <button id="theme-toggle" class="p-2 hover:bg-gray-800 rounded-lg transition ml-2" aria-label="Toggle theme"></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-gradient-to-r from-orange-600 to-red-600 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl font-bold mb-2">Lesson 9: Meta Tags and SEO</h1>
+            <p class="text-white/80 text-lg">Character sets, viewport, and search engine optimization</p>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">📚 Learning Objectives</h2>
+            <ul class="space-y-2 text-gray-300">
+                <li>✓ Understand meta tags and their purpose</li>
+                <li>✓ Implement character encoding</li>
+                <li>✓ Set viewport for mobile responsiveness</li>
+                <li>✓ Use meta descriptions and keywords</li>
+                <li>✓ Optimize for search engines</li>
+            </ul>
+        </div>
+
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">💡 Meta Tags and SEO</h2>
+            <p class="text-gray-300 mb-4">
+                Meta tags provide metadata about HTML documents. They're placed in the &lt;head&gt; section and help search engines understand your page.
+            </p>
+            <p class="text-gray-300">
+                Key meta tags include charset (character encoding), viewport (mobile responsiveness), description, keywords, and open graph tags for social media sharing.
+            </p>
+        </div>
+
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">✏️ SEO-Friendly Head Section</h2>
+            <textarea id="codeEditor" style="display:none;">&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;meta name="description" content="Learn web development with DevLearn"&gt;
+  &lt;meta name="keywords" content="HTML, CSS, JavaScript, web development"&gt;
+  &lt;meta name="author" content="Your Name"&gt;
+  
+  &lt;!-- Open Graph for Social Media --&gt;
+  &lt;meta property="og:title" content="DevLearn - Web Development Course"&gt;
+  &lt;meta property="og:description" content="Master web development"&gt;
+  &lt;meta property="og:type" content="website"&gt;
+  
+  &lt;title&gt;DevLearn - Master Web Development&lt;/title&gt;
+&lt;/head&gt;</textarea>
+            
+            <h3 class="text-lg font-semibold mb-3">Important Meta Tags:</h3>
+            <div class="space-y-3 mt-4">
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">charset</p>
+                    <p class="text-gray-300 text-sm">Specifies character encoding (UTF-8 recommended)</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">viewport</p>
+                    <p class="text-gray-300 text-sm">Controls layout on mobile devices</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">description</p>
+                    <p class="text-gray-300 text-sm">Page description shown in search results</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                    <p class="font-semibold text-orange-400">keywords</p>
+                    <p class="text-gray-300 text-sm">Relevant keywords for search engines</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-between mt-12">
+            <a href="lesson-8.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition">← Previous Lesson</a>
+            <a href="lesson-10.html" class="px-6 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg transition">Next Lesson →</a>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="../../css/theme-toggle.css">
+</body>
+</html>

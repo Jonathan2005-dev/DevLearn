@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../../tailwind/tailwind-all.min.css">
+    <link rel="icon" type="image/x-icon" href="../../images/icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: Introduction to HTML - DevLearn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
+        
+        .CodeMirror {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        .lesson-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .lesson-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .code-editor {
+            border: 1px solid #374151;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .preview-pane {
+            border: 1px solid #374151;
+            border-radius: 8px;
+            background: white;
+            color: #1f2937;
+            padding: 1rem;
+            overflow: auto;
+            min-height: 400px;
+        }
+        
+        .run-btn {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 1rem 0;
+        }
+        
+        .run-btn:hover {
+            box-shadow: 0 8px 16px rgba(249, 115, 22, 0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+    <script src="../../js/theme-toggle.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center"><img src="../../images/icon.png" alt="DevLearn icon" class="w-6 h-6"></div>
+                    <span class="text-2xl font-bold">DevLearn</span>
+                </a>
+                <a href="html-fundamentals.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg">← Back to Course</a>
+                <button id="theme-toggle" class="p-2 hover:bg-gray-800 rounded-lg transition ml-2" aria-label="Toggle theme"></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Lesson Header -->
+    <section class="bg-gradient-to-r from-orange-600 to-red-600 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl font-bold mb-2">Lesson 1: Introduction to HTML</h1>
+            <p class="text-white/80 text-lg">Learn what HTML is and its role in web development</p>
+        </div>
+    </section>
+
+    <!-- Lesson Content -->
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <!-- Learning Objectives -->
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">📚 Learning Objectives</h2>
+            <ul class="space-y-2 text-gray-300">
+                <li>✓ Understand what HTML stands for and what it does</li>
+                <li>✓ Learn the history and evolution of HTML</li>
+                <li>✓ Understand the relationship between HTML, CSS, and JavaScript</li>
+                <li>✓ Create your first HTML document</li>
+                <li>✓ Understand HTML tags and elements</li>
+            </ul>
+        </div>
+
+        <!-- Concept Explanation -->
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">💡 What is HTML?</h2>
+            <p class="text-gray-300 mb-4">
+                HTML stands for <strong>HyperText Markup Language</strong>. It's the standard markup language used to create web pages. HTML provides the structure and content of websites, while CSS handles styling and JavaScript adds interactivity.
+            </p>
+            <p class="text-gray-300 mb-4">
+                HTML works by using a system of tags and elements that tell web browsers how to display content. Each tag has a specific purpose, from basic text formatting to embedding media and creating forms.
+            </p>
+            <p class="text-gray-300">
+                Think of HTML as the skeleton of a webpage, CSS as the styling (skin, clothes), and JavaScript as the actions (moving, talking, etc.).
+            </p>
+        </div>
+
+        <!-- Interactive Code Example -->
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">✏️ Try It Yourself</h2>
+            <p class="text-gray-300 mb-4">Edit the HTML code below and click "Run Example" to see the result:</p>
+            
+            <div class="lesson-container">
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">HTML Code:</h3>
+                    <textarea id="codeEditor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My First Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to HTML!&lt;/h1&gt;
+    &lt;p&gt;This is my first HTML page. I'm learning web development!&lt;/p&gt;
+    &lt;p&gt;HTML is fun and powerful.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Preview:</h3>
+                    <button class="run-btn" onclick="runCode()">▶ Run Example</button>
+                    <div class="preview-pane" id="preview"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Concepts -->
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8">
+            <h2 class="text-2xl font-bold mb-4">🔑 Key Concepts</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-orange-400">Tags</h3>
+                    <p class="text-gray-300">HTML elements are defined by tags, which are keywords surrounded by angle brackets: &lt;tag&gt;&lt;/tag&gt;</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-orange-400">Elements</h3>
+                    <p class="text-gray-300">An element consists of an opening tag, content, and a closing tag. Some tags are self-closing.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-orange-400">DOCTYPE</h3>
+                    <p class="text-gray-300">The &lt;!DOCTYPE html&gt; declaration tells the browser this is an HTML5 document.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-orange-400">Structure</h3>
+                    <p class="text-gray-300">Every HTML document has head (metadata) and body (visible content) sections.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-between mt-12">
+            <a href="html-fundamentals.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition">← Back to Course</a>
+            <a href="lesson-2.html" class="px-6 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg transition">Next Lesson →</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script>
+        const editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+            mode: 'htmlmixed',
+            theme: 'dracula',
+            lineNumbers: true,
+            autoCloseTags: true,
+            matchBrackets: true,
+            lineWrapping: true,
+            height: '400px'
+        });
+
+        function runCode() {
+            const code = editor.getValue();
+            const preview = document.getElementById('preview');
+            preview.innerHTML = code;
+        }
+
+        // Run on load
+        runCode();
+    </script>
+    <link rel="stylesheet" href="../../css/theme-toggle.css">
+</body>
+</html>

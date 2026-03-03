@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../../tailwind/tailwind-all.min.css">
+    <link rel="icon" type="image/x-icon" href="../../images/icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11: HTML Best Practices - DevLearn</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
+    </style>
+    <script src="../../js/theme-toggle.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center"><img src="../../images/icon.png" alt="DevLearn icon" class="w-6 h-6"></div>
+                    <span class="text-2xl font-bold">DevLearn</span>
+                </a>
+                <a href="html-fundamentals.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg">← Back to Course</a>
+                <button id="theme-toggle" class="p-2 hover:bg-gray-800 rounded-lg transition ml-2" aria-label="Toggle theme"></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-gradient-to-r from-orange-600 to-red-600 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl font-bold mb-2">Lesson 11: HTML Best Practices</h1>
+            <p class="text-white/80 text-lg">Code organization, naming conventions, and standards</p>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">📚 Learning Objectives</h2>
+            <ul class="space-y-2 text-gray-300">
+                <li>✓ Follow HTML naming conventions</li>
+                <li>✓ Structure code for readability</li>
+                <li>✓ Comment code effectively</li>
+                <li>✓ Validate HTML code</li>
+                <li>✓ Follow web standards</li>
+            </ul>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-800 border border-gray-700 rounded-lg p-8">
+                <h2 class="text-2xl font-bold mb-4">✅ Do's</h2>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3">✓</span>
+                        <div>
+                            <strong>Use semantic HTML</strong>
+                            <p class="text-sm">Use meaningful tags like header, nav, main, article</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3">✓</span>
+                        <div>
+                            <strong>Indent code properly</strong>
+                            <p class="text-sm">Use consistent spacing (2 or 4 spaces)</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3">✓</span>
+                        <div>
+                            <strong>Use lowercase tag names</strong>
+                            <p class="text-sm">&lt;div&gt; not &lt;DIV&gt;</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3">✓</span>
+                        <div>
+                            <strong>Quote attribute values</strong>
+                            <p class="text-sm">href="page.html" not href=page.html</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3">✓</span>
+                        <div>
+                            <strong>Close all tags</strong>
+                            <p class="text-sm">Include closing tags for all elements</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-gray-800 border border-gray-700 rounded-lg p-8">
+                <h2 class="text-2xl font-bold mb-4">❌ Don'ts</h2>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex items-start">
+                        <span class="text-red-400 mr-3">✗</span>
+                        <div>
+                            <strong>Avoid div-itis</strong>
+                            <p class="text-sm">Don't use divs for everything</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-400 mr-3">✗</span>
+                        <div>
+                            <strong>Don't ignore accessibility</strong>
+                            <p class="text-sm">Always add alt text, use labels</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-400 mr-3">✗</span>
+                        <div>
+                            <strong>Don't nest improperly</strong>
+                            <p class="text-sm">Maintain proper HTML hierarchy</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-400 mr-3">✗</span>
+                        <div>
+                            <strong>Don't use inline styles</strong>
+                            <p class="text-sm">Use external CSS files instead</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-400 mr-3">✗</span>
+                        <div>
+                            <strong>Don't mix concerns</strong>
+                            <p class="text-sm">Keep HTML, CSS, JS separate</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-8 mt-8">
+            <h2 class="text-2xl font-bold mb-4">📝 Code Organization Example</h2>
+            <div class="bg-gray-900 p-4 rounded border border-gray-700 font-mono text-sm">
+                <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Site Title&lt;/h1&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Article Title&lt;/h2&gt;
+            &lt;p&gt;Article content...&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 My Site&lt;/p&gt;
+    &lt;/footer&gt;
+
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+        </div>
+
+        <div class="flex justify-between mt-12">
+            <a href="lesson-10.html" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition">← Previous Lesson</a>
+            <a href="lesson-12.html" class="px-6 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg transition">Final Project →</a>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="../../css/theme-toggle.css">
+</body>
+</html>
